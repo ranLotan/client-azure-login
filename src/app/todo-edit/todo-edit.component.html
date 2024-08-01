@@ -1,0 +1,42 @@
+<button (click)="getAccessTokenClaims()">get access Token claims</button>
+<button (click)="getAccessTokenClaims()">get access Token claims</button>
+<button (click)="getAccessTokenClaims()">get access Token claims</button>
+<button (click)="getAccessTokenClaims()">get access Token claims</button>
+<button (click)="getAccessTokenClaims()">get access Token claims</button>
+<table mat-table [dataSource]="tokenClaimsDataSource" class="mat-elevation-z8" *ngIf="tokenClaimsDataSource.length > 0">
+    <!-- Claim Column -->
+    <ng-container matColumnDef="claim">
+        <th mat-header-cell *matHeaderCellDef> Claim </th>
+        <td mat-cell *matCellDef="let element"> {{element.claim}} </td>
+    </ng-container>
+
+    <!-- Value Column -->
+    <ng-container matColumnDef="value">
+        <th mat-header-cell *matHeaderCellDef> Value </th>
+        <td mat-cell *matCellDef="let element"> {{element.value}} </td>
+    </ng-container>
+
+    <!-- Value Column -->
+    <ng-container matColumnDef="description">
+        <th mat-header-cell *matHeaderCellDef> Description </th>
+        <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns sticky: true"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<mat-card class='card-section'>
+    <div>
+        <h1>Edit a task</h1>
+        <hr>
+        <br>
+    </div>
+    <form #edit="ngForm" (ngSubmit)="editTodo(edit.value)">
+        <mat-form-field appearance="fill" class="form-field">
+            <input matInput type="text" name="description" placeholder="task" class="input-field"
+                [(ngModel)]="todo.description">
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit" value="submit" class="submit-button">Edit</button>
+    </form>
+</mat-card>
+<button (click)="getAccessTokenClaims()">get access Token claims</button>
